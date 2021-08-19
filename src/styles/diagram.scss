@@ -1,0 +1,19 @@
+#diagram {
+  height: 100%;
+
+  .dm-view {
+    top: 40px;
+  }
+
+  .dm-panels {
+    z-index: 1;
+  }
+
+  .dm-panel {
+    overflow: auto;
+  }
+
+  .dm-content {
+    padding: 0;
+  }
+}

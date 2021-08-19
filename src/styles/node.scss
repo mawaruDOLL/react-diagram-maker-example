@@ -1,0 +1,11 @@
+.node {
+  font-size: 12px;
+
+  &.selected {
+    border: 1px solid blue;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+}
