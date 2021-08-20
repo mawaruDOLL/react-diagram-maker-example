@@ -85,6 +85,44 @@ export default function Diagram() {
       },
     };
 
+    nodes['n2'] = {
+      id: 'n2',
+      typeId: 'node',
+      diagramMakerData: {
+        position: {
+          x: libraryPanelWidth + 30,
+          y: 30 + nodeHeight + 30
+        },
+        size: { width: nodeWidth, height: nodeHeight },
+      },
+    };
+
+    nodes['n3'] = {
+      id: 'n3',
+      typeId: 'node',
+      diagramMakerData: {
+        position: {
+          x: libraryPanelWidth + 30,
+          y: 30 + (nodeHeight * 2) + (30 * 2)
+        },
+        size: { width: nodeWidth, height: nodeHeight },
+      },
+    };
+
+    edges.e1 = {
+      id: 'e1',
+      src: 'n1',
+      dest: 'n2',
+      diagramMakerData: {}
+    };
+
+    edges.e2 = {
+      id: 'e2',
+      src: 'n2',
+      dest: 'n3',
+      diagramMakerData: {}
+    };
+
     const canvasSize:Size = {
       width: workspaceWidth * 2,
       height: workspaceHeight * 2
@@ -139,7 +177,9 @@ export default function Diagram() {
     });
 
     return () => {
-      diagramMaker.destroy();
+      if (container.current != null) {
+        diagramMaker.destroy();
+      }
     };
   }, []);
 
